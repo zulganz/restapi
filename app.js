@@ -45,9 +45,9 @@ app.use(session({
   secret: 'secret',  
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 86400000 },
+  cookie: { maxAge: 2628000000 },
   store: new MemoryStore({
-    checkPeriod: 86400000 // prune expired entries every 24h
+    checkPeriod: 2628000000 // prune expired entries every 24h
   }),
 }));
 app.use(express.urlencoded({ extended: true }));
