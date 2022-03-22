@@ -1,4 +1,4 @@
-const { limitCount, limitPremium, TotalReq } = require('../lib/settings');
+const { limitCount, limitPremium, TotalReq } = require('./settings');
 const { User } = require('./model');
 
     async function addUser(username, password, apikey) {

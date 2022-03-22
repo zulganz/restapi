@@ -2,7 +2,7 @@ const express = require('express');
 const { checkUsername, resetAllLimit } = require('../database/db');
 const { addPremium, deletePremium, tokens, checkPremium, changeKey, resetOneLimit, resetTodayReq } = require('../database/premium');
 const { isAuthenticated } = require('../lib/auth');
-const { limitCount } = require('../lib/settings');
+const { limitCount } = require('../database/settings');
 const router = express.Router();
 
 router.get('/', isAuthenticated, async  (req, res) => {
