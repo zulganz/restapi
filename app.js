@@ -100,7 +100,7 @@ app.get('/docs', isAuthenticated, async (req, res) => {
     userTotal,
     username: username,
     apikey: apikey,
-    layout: 'layouts/docs'
+    layout: 'layouts/main'
   });
 });
 app.get('/primbonmenu', isAuthenticated, async (req, res) => { 
