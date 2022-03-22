@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { dbURI } = require('../lib/settings');
+const { dbURI } = require('../database/settings');
 
 function connectMongoDb() {
     mongoose.connect(dbURI, { 
