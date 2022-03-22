@@ -944,7 +944,7 @@ router.get('/aesthetic', async (req, res, next) => {
     .then(data => {
     var result = data;
      res.json({
-     author: 'Zul',
+     author: 'zul',
         result
    })
    })
@@ -971,7 +971,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
                result
            })
         })
@@ -998,7 +998,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
                result
            })
         })
@@ -1026,7 +1026,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1057,7 +1057,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1088,7 +1088,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1119,7 +1119,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1150,7 +1150,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              result
            })
         })
@@ -1180,7 +1180,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              result
            })
         })
@@ -1211,7 +1211,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
                result
            })
         })

@@ -3117,12 +3117,12 @@ input[type="button"].btn-block {
     z-index: 1001;
     position: fixed;
     top: 0;
-    right: -300px;
+    left: -300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20% 0 0 60%;
-    transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+    border-radius: 0 20% 60% 0;
+    transition: left 0.8s cubic-bezier(1, 0, 0, 1);
   }
   
   .change {
@@ -3131,7 +3131,7 @@ input[type="button"].btn-block {
     z-index: 1001;
     float: left;
     min-height: 80px;
-    right: 0;
+    left: 0;
   }
   
   .hamburger-menu {
@@ -3139,7 +3139,7 @@ input[type="button"].btn-block {
     height: 30px;
     position: fixed;
     top: 90px;
-    right: 30px;
+    left: 30px;
     cursor: pointer;
     display: flex;
     flex-direction: column;

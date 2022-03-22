@@ -1805,7 +1805,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
   }
   .home-social-list {
     font-size: 2rem;
-    right: 30px;
+    left: 30px;
   }
   .scroll-icon {
     top: 21px;
@@ -2756,7 +2756,7 @@ footer ul a:visited {
 #go-top {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   z-index: 600;
   display: none;
 }

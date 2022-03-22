@@ -11,7 +11,7 @@ const { cakLontong, bijak, quotes, fakta, ptl, motivasi } = require('../controll
 const { photoOxy } = require('./oxy');
 const  request  = require('request');
 var zrapi = require("KurrXKey09");
-var creatorList = ['zul'];
+var creatorList = ['Zul'];
 var fetch = require('node-fetch');
 var fs = require('fs');
  var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
@@ -976,7 +976,7 @@ router.get('/aesthetic', async (req, res, next) => {
     .then(data => {
     var result = data;
      res.json({
-     author: 'Zul',
+     author: 'zul',
         result
    })
    })
@@ -1003,7 +1003,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
                result
            })
         })
@@ -1030,7 +1030,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
                result
            })
         })
@@ -1058,7 +1058,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1089,7 +1089,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1120,7 +1120,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1151,7 +1151,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              status: 200,
              result
            })
@@ -1182,7 +1182,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              result
            })
         })
@@ -1212,7 +1212,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
              result
            })
         })
@@ -1243,7 +1243,7 @@ router.get('/aesthetic', async (req, res, next) => {
         .then(data => {
         var result = data;
            res.json({
-             author: 'Zul',
+             author: 'zul',
                result
            })
         })
