@@ -1,6 +1,6 @@
 const { User, Utils } = require('./model');
 const toMs = require('ms');
-const { limitCount, limitPremium } = require('../lib/settings');
+const { limitCount, limitPremium } = require('../database/settings');
 const tokens = 'claser'
 module.exports.tokens = tokens
 
