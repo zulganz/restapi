@@ -1,11 +1,11 @@
 const { User, Utils } = require('./model');
 const toMs = require('ms');
-const { limitCount, limitPremium } = require('./settings');
+const { limitCount, limitPremium } = require('../lib/settings');
 const tokens = 'claser'
 module.exports.tokens = tokens
 
     async function addPremium(username, customKey, expired) {
-        User.updateOne({username: username}, {apikey: customKey, premium: 86400000 * expired, limit: limitPremium}, function (err, res) {
+        User.updateOne({username: username}, {apikey: customKey, premium: Date.now() + toMs(expired), limit: limitPremium}, function (err, res) {
             if (err) throw err;
         })
     }
