@@ -2,10 +2,11 @@ const { User, Utils } = require('./model');
 const toMs = require('ms');
 const { limitCount, limitPremium } = require('./settings');
 const tokens = 'claser'
+let now = new Date() * 1
 module.exports.tokens = tokens
 
     async function addPremium(username, customKey, expired) {
-        User.updateOne({username: username}, {apikey: customKey, premium: Date.now() + toMs(expired), limit: limitPremium}, function (err, res) {
+        User.updateOne({username: username}, {apikey: customKey, premium: Date() + 86400000 * expired, limit: limitPremium}, function (err, res) {
             if (err) throw err;
         })
     }
@@ -16,7 +17,7 @@ module.exports.tokens = tokens
         users.forEach(async(data) => {
             let { premium, defaultKey, username } = data
             if (!premium || premium === null) return
-            if (Date.now() >= premium) {
+            if (now >= premium) {
                 User.updateOne({username: username}, {apikey: defaultKey, premium: null, limit: limitCount}, function (err, res) {
                     if (err) throw err;
                     console.log(`Masa Premium ${username} sudah habis`)
