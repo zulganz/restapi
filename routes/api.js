@@ -9,6 +9,7 @@ const { cekKey, limitAdd, isLimit } = require('../database/db');
 const { youtubePlay, youtubeMp4, youtubeMp3 } = require('../controllers/yt');
 const { cakLontong, bijak, quotes, fakta, ptl, motivasi } = require('../controllers/randomtext');
 const { photoOxy } = require('./oxy');
+const { Otakudesu, Getdownload } = require('../lib/otakudesu.js')
 const  request  = require('request');
 var creatorList = ['Zul'];
 var fetch = require('node-fetch');
@@ -283,7 +284,7 @@ router.get('/emoji', async(req, res, next) => {
   })
 })
 
-router.get('/otakudesu', async(req, res, next) => {
+router.get('/otakudesuongoing', async(req, res, next) => {
   const apikey = req.query.apikey;
         if (apikey === undefined) return res.status(404).send({
             status: 404,
@@ -1554,6 +1555,52 @@ router.get('/fml', async (req, res, next) => {
    .catch(e => {
      res.json(loghandler.error)
 })
+})
+
+router.get('/otakudesu', async (req, res, next) => {
+  const query = req.query.q;
+  const apikey = req.query.apikey;
+  if (apikey === undefined) return res.status(404).send({
+      status: 404,
+      message: `Input Parameter apikey`
+  });
+  const check = await cekKey(apikey);
+  if (!check) return res.status(403).send({
+      status: 403,
+      message: `apikey ${apikey} not found, please register first!`
+  });
+  let limit = await isLimit(apikey);
+  if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
+  limitAdd(apikey);
+  //make the Search query then use GetDownload And put all the result into json using otakudesu.js lib
+  const result = await Otakudesu(query);
+  res.json({
+      creator : `${creator}`,
+      result
+  })
+})
+
+router.get('/otakudesudonlod', async (req, res, next) => {
+  const query = req.query.q;
+  const apikey = req.query.apikey;
+  if (apikey === undefined) return res.status(404).send({
+      status: 404,
+      message: `Input Parameter apikey`
+  });
+  const check = await cekKey(apikey);
+  if (!check) return res.status(403).send({
+      status: 403,
+      message: `apikey ${apikey} not found, please register first!`
+  });
+  let limit = await isLimit(apikey);
+  if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
+  limitAdd(apikey);
+  //make the Search query then use GetDownload And put all the result into json using otakudesu.js lib
+  const result = await Getdownload(query);
+  res.json({
+      creator : `${creator}`,
+      result
+  })
 })
 
 router.get('/ytplay', youtubePlay);

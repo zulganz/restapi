@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 const Recaptcha = require('express-recaptcha').RecaptchaV2;
-const recaptcha = new Recaptcha('6LdNFoAcAAAAAKs1rouyFUhwbWnHJREHp7vEs4Qd', '6LdNFoAcAAAAACaBN-0g2I7RREGZQZI78l3DzXu-');
+const recaptcha = new Recaptcha('6LfKhU4cAAAAALzZ1iEKsqfmLe-FmeCeK9kkEStt', '6LfKhU4cAAAAAH54cUaQJFEaHqmm-a0mwGaCA5Or');
 
 const { getHashedPassword, randomText } = require('../lib/function');
 const { checkUsername, addUser } = require('../database/db');
@@ -15,14 +15,14 @@ router.get('/', notAuthenticated, (req, res) => {
     });
 });
 
-router.get('/login', notAuthenticated, (req, res) => {
+router.get('/login', notAuthenticated, recaptcha.middleware.render, (req, res) => {
     res.render('login', {
         recaptcha: res.recaptcha,
         layout: 'layouts/main'
     });
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', recaptcha.middleware.verify, captchaLogin, (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: '/docs',
         failureRedirect: '/users/login',
@@ -30,7 +30,7 @@ router.post('/login', (req, res, next) => {
     })(req, res, next);
 });
 
-router.get('/register', notAuthenticated,(req, res) => {
+router.get('/register', notAuthenticated, recaptcha.middleware.render, (req, res) => {
     res.render('register', {
         recaptcha: res.recaptcha,
         layout: 'layouts/main'  
@@ -38,7 +38,7 @@ router.get('/register', notAuthenticated,(req, res) => {
 });
 
 
-router.post('/register', async (req, res) => {
+router.post('/register', recaptcha.middleware.verify, captchaRegister, async (req, res) => {
     try {
         let {username, password, confirmPassword } = req.body;
         if (password.length < 6 || confirmPassword < 6) {

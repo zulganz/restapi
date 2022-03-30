@@ -6,7 +6,7 @@ const fetch = require('node-fetch')
 
 function otakuDesuOngoing() {
   return new Promise((resolve, reject) => {
-    fetch('https://otakudesu.moe/ongoing-anime', {
+    fetch('https://otakudesu.live/ongoing-anime', {
       method: 'GET',
       headers: {
         'user-agent': 'Mozilla/5.0 (Linux; Android 9; Redmi 7A) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.99 Mobile Safari/537.36'
