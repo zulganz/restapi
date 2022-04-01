@@ -9,8 +9,9 @@ const { getHashedPassword, randomText } = require('../lib/function');
 const { checkUsername, addUser } = require('../database/db');
 const { notAuthenticated, captchaRegister, captchaLogin } = require('../lib/auth');
 
-router.get('/', notAuthenticated, (req, res) => {
+router.get('/', notAuthenticated, recaptcha.middleware.render, (req, res) => {
     res.render('login', {
+        recaptcha: res.recaptcha,
         layout: 'layouts/main'
     });
 });
