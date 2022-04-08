@@ -93,7 +93,11 @@ async function photoOxy(req, res) {
         })
     }).catch(error => {
         console.log(error);
-        res.status(500).send({status: 500, message: response500()});
+        //if res status 500 then show message error
+        res.status(500).send({
+            status: 500,
+            message: 'Internal Server Error'
+        })
     });
 }
 

@@ -21,6 +21,7 @@ const { getApikey, resetLimit} = require('./database/db');
 const { port } = require('./database/settings');
 const { ignoreFavicon } = require('./lib/function');
 const { ExpiredTime, getTotalReq, getTodayReq, getVisitor, getTotalUser, addRequest, addVisitor } = require('./database/premium');
+const { resetAllLimit } = require('./database/db')
 const PORT = process.env.PORT || port;
 
 connectMongoDb();

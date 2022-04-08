@@ -6,6 +6,8 @@ const Users = mongoose.Schema({
     apikey: { type: String },
     defaultKey: { type: String },
     premium: { type: String },
+    verify: { type: Boolean },
+    limit: { type: String },
     limit: { type: Number },
     totalreq: { type : String },
 }, { versionKey: false });

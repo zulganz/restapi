@@ -2,7 +2,7 @@ const { limitCount, limitPremium, TotalReq } = require('./settings');
 const { User } = require('./model');
 
     async function addUser(username, password, apikey) {
-        let obj = { username, password, apikey, defaultKey: apikey, premium: null, limit: limitCount, totalreq: TotalReq };
+        let obj = { username, password, apikey, defaultKey: apikey, premium: null, limit: limitCount, totalreq: TotalReq, verify: false };
         User.create(obj);
     }
     module.exports.addUser = addUser
