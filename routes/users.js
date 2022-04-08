@@ -79,7 +79,7 @@ router.post('/register', recaptcha.middleware.verify, captchaRegister, async (re
                     html: `<h1>Please confirm your email</h1>
                     <p>Click the link below to confirm your email</p>
                     <p>This Email Will expire in 20 menit<p>
-                    <p>${req.headers.host}/users/confirmation/${token}</p>`
+                    <a href="${req.headers.host}/confirmation/${token}" style="color:#000;text-decoration:none">Verify Email</a>`
                 }
                 mail.sendMail(data, (err, info) => {
                     if (err) {
